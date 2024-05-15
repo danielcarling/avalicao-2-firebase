@@ -12,6 +12,7 @@
     "core-js": "^3.34.0",
     "firebase": "^10.11.0",
     "roboto-fontface": "*",
+    "uuid": "^9.0.1",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"
   },
