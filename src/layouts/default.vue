@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <Login />
     <v-main>
       <v-container>
@@ -10,5 +10,11 @@
 </template>
 
 <script setup>
-//
+
 </script>
+
+<style>
+#app {
+  background-color: rgba(235, 235, 235, 0.461);
+}
+</style>
