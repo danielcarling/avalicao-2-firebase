@@ -8,7 +8,7 @@
         </v-btn>
       </template>
     </v-text-field>
-    <v-text-field v-model="note.content" @keyup.enter="addNote" v-else>
+    <v-text-field v-model="editedNoteContent" @keyup.enter="addNote" v-else>
       <template v-slot:append-inner>
         <v-icon class="cursor-pointer" @click="cancelEdit" color="black">
           mdi-close </v-icon>
@@ -61,6 +61,7 @@ const users = ref([]);
 const notes = ref([]);
 const note = ref({})
 const isEditing = ref(false);
+const editedNoteContent = ref('');
 
 const shortBio = ref({});
 
@@ -96,12 +97,13 @@ const updateUser = async () => {
 }
 
 const editNote = (id) => {
+  editedNoteContent.value = notes.value.find(note => note.id === id).content;
   isEditing.value = true;
   note.value = notes.value.find(note => note.id === id);
 }
 
 const confirmEdit = async () => {
-  await updateDoc(doc(notesCollection, note.value.id), { content: note.value.content })
+  await updateDoc(doc(notesCollection, note.value.id), { content: editedNoteContent.value })
   isEditing.value = false;
   note.value = {}
 }
