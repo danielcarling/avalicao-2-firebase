@@ -18,7 +18,12 @@
           <v-icon color="black"> mdi-trash-can </v-icon>
         </v-btn>
       </template>
+
     </v-text-field>
+    <v-select v-model="visibility" :items="['Pública', 'Privada']" />
+
+    <button @click="console.log(visibility)">dasjkllasdkkl</button>
+
     <v-card v-for="note in notes" class="items">
       <div class="d-flex note-header">
         <v-img class="ml-3 rounded-circle" max-height="50" max-width="50"
@@ -31,8 +36,12 @@
         <v-card-text>{{ note.content }}</v-card-text>
         <v-skeleton-loader type="list-item-two-line" v-if="loading" />
         <v-card-actions>
-          <v-btn @click="noteDelete(note.id)">Delete</v-btn>
-          <v-btn @click="editNote(note.id)">Edit</v-btn>
+          <v-btn @click="noteDelete(note.id)">
+            <v-icon color="red"> mdi-delete </v-icon>
+          </v-btn>
+          <v-btn @click="editNote(note.id)">
+            <v-icon color="blue"> mdi-pencil </v-icon>
+          </v-btn>
         </v-card-actions>
       </div>
     </v-card>
@@ -62,6 +71,8 @@ const notes = ref([]);
 const note = ref({})
 const isEditing = ref(false);
 const editedNoteContent = ref('');
+
+const visibility = ref('Pública');
 
 const shortBio = ref({});
 
