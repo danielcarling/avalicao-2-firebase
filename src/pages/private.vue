@@ -23,7 +23,8 @@
     <v-select v-model="visibility" :items="['Pública', 'Privada']" />
 
     <v-card v-for="note in notes" class="items">
-      <div v-if="note.visibility === 'public'">
+      <div
+        v-if="note.visibility === 'private' && note.userId === userStore.user.uid">
         <div class="d-flex note-header">
           <v-img class="ml-3 rounded-circle" max-height="50" max-width="50"
             src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
