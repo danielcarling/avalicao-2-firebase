@@ -22,8 +22,8 @@
     </v-text-field>
     <v-select v-model="visibility" :items="['Pública', 'Privada']" />
 
-    <v-card v-for="note in notes" class="items">
-      <div v-if="note.visibility === 'public'">
+    <div v-for="note in notes" class="items">
+      <v-card v-if="note.visibility === 'public'">
         <div class="d-flex note-header">
           <v-img class="ml-3 rounded-circle" max-height="50" max-width="50"
             src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
@@ -43,8 +43,8 @@
             </v-btn>
           </v-card-actions>
         </div>
-      </div>
-    </v-card>
+      </v-card>
+    </div>
   </div>
 </template>
 
@@ -134,7 +134,6 @@ const uppercaseFirstLetter = (string) => {
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
   }
-
   return words.join(' ');
 }
 
@@ -149,10 +148,5 @@ const uppercaseFirstLetter = (string) => {
 .text-field {
   display: flex;
   align-items: center;
-}
-
-.items {
-  margin-top: 20px;
-  padding: 10px;
 }
 </style>
