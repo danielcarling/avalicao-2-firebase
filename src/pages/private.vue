@@ -141,7 +141,7 @@ const uppercaseFirstLetter = (string) => {
 
 </script>
 
-<style>
+<style scoped>
 .main {
   max-width: 800px;
   margin: 0 auto;
@@ -152,8 +152,7 @@ const uppercaseFirstLetter = (string) => {
   align-items: center;
 }
 
-.items {
+/* .items {
   margin-top: 20px;
-  padding: 10px;
-}
+} */
 </style>

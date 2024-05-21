@@ -139,7 +139,7 @@ const uppercaseFirstLetter = (string) => {
 
 </script>
 
-<style>
+<style scoped>
 .main {
   max-width: 800px;
   margin: 0 auto;
@@ -148,5 +148,9 @@ const uppercaseFirstLetter = (string) => {
 .text-field {
   display: flex;
   align-items: center;
+}
+
+.items {
+  margin-bottom: 20px;
 }
 </style>
